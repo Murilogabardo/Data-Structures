@@ -6,12 +6,12 @@ E-mail: murilogabardo@hotmail.com
 CV: http://lattes.cnpq.br/8203093591818100
 
 --->This is a Generic Template Tree
---->Notice that the operators of comparison MUST be defined for the Class used as parameter of the template
+--->Notice that the operators of comparison MUST be defined in the Class used as parameter of the template
 --->By definition numeric types have already this implemented, so just use it!
 
 Acknowledgements:
 
- Professor Jean Marcelo Simao.
+ Professor Dr. Jean Marcelo Simao.
 
 */
 
