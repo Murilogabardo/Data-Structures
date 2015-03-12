@@ -83,7 +83,15 @@ public:
 	}
 	~List()
 	{
-
+		pBefore = pFirstElement;
+		pActual = pFirstElement;
+		for(; listSize - 1 > 0; listSize--)
+		{
+			pActual = pActual->getNextElement();
+			delete pBefore;
+			pBefore = pActual;
+		}
+		delete pBefore;
 	}
 
     /*Returns the size of the list*/
@@ -189,15 +197,22 @@ public:
     /*Operator overload, so if you want a Item that's in the middle
     of the list you can acess it.
     IMPORTANT: this overloading doens't create a new position, it is read-only*/
-    LType operator[] (const int elementIndex)
+    LType operator[] (const int elementIndex) const
     {
-        int index;
-        Element<LType>* pAux = pFirstElement;
-        for(index = 0; index < elementIndex; index++)
-        {
-            pAux = pAux->getNextElement();
-        }
-        return (pAux->getAttached());
+		if((elementIndex < listSize) && (elementIndex >= 0))
+		{
+			int index;
+			Element<LType>* pAux = pFirstElement;
+			for(index = 0; index < elementIndex; index++)
+			{
+				pAux = pAux->getNextElement();
+			}
+			return (pAux->getAttached());
+		}
+		else
+		{
+			return NULL;
+		}
     }
 
     /*Same as remove() but you search by Item Adress and doens't return it*/
