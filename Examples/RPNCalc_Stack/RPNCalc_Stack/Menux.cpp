@@ -20,7 +20,7 @@ bool Menux::isNumber(string number)
 	{	
 		c = number[i];
 
-		if(  !(((0x39 >= c) && (c >= 0x30)||c == 0x2E)  || (((c == 0x2D || c == 0x2B)&&(i==0)&&number.size() >= 2))) )
+		if(  !((('9' >= c) && (c >= '0')||c == '.')  || (((c == '-' || c == '+')&&(i==0)&&number.size() >= 2))) )
 		{
 			return false;
 		}

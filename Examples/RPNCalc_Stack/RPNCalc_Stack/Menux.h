@@ -3,6 +3,7 @@
 #include "stdafx.h"
 #include "Stack.h"
 
+
 class Menux
 {
 private:
